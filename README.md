@@ -2,6 +2,8 @@
 
 Ein kleines Symfony-Projekt, das das Alter eines Benutzers über ein Webformular prüft, die Ergebnisse speichert und weitere Funktionen wie CSV-Download, Login-Schutz und API-Schnittstelle bietet.
 
+
+
 🔹 Features
 
 🔢 Altersprüfung via Formular (Name + Alter eingeben)
@@ -15,6 +17,9 @@ Ein kleines Symfony-Projekt, das das Alter eines Benutzers über ein Webformular
 🌐 API-Endpoint (JSON) für externe Anfragen
 
 ✨ Bootstrap-Design für schönes Frontend
+
+
+
 
 📚 Installation
 
@@ -35,37 +40,21 @@ Im Browser aufrufen:
 
 http://127.0.0.1:8000
 
-📊 Wichtige Routen
 
-Route
 
-Funktion
 
-Schutz
+### 📊 Wichtige Routen
 
-/alter
+| **Route**                      | **Funktion**                          | **Schutz**              |
+|-------------------------------|---------------------------------------|--------------------------|
+| `/alter`                      | Formular für Alterscheck              | ⛓ Öffentlich             |
+| `/alle`                       | Alle Einträge aus der CSV anzeigen    | 🔐 Login erforderlich    |
+| `/download`                   | CSV-Datei herunterladen               | 🔐 Login erforderlich    |
+| `/api/alter?name=Max&alter=22`| API-Zugriff (JSON)                    | ⛓ Öffentlich             |
 
-Formular für Alterscheck
 
-⛓ Öffentlich
 
-/alle
 
-Alle Einträge aus der CSV anzeigen
-
-🔐 Login erforderlich
-
-/download
-
-CSV-Datei herunterladen
-
-🔐 Login erforderlich
-
-/api/alter?name=Max&alter=22
-
-API-Zugriff (JSON)
-
-⛓ Öffentlich
 
 📊 Benötigte Voraussetzungen
 
@@ -76,6 +65,9 @@ Composer
 Symfony CLI
 
 Git
+
+
+
 
 💜 Viel Spaß beim Nutzen und Weiterentwickeln!
 
