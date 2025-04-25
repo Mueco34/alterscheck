@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alterscheck{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="mb-4">🧮 Alterscheck</h2>
+
+    <form method="post" class="border p-4 rounded shadow-sm bg-light">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="alter" class="form-label">Alter:</label>
+            <input type="number" name="alter" id="alter" class="form-control" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">✅ Prüfen</button> 
+        <button type="reset" class="btn btn-secondary">🔄 Zurücksetzen</button>
+    </form>
+
+    {% if ergebnis %}
+    <div class="alert {{ ergebnis matches('/volljährig/') ? 'alert-success' : 'alert-danger' }} mt-4">
+        {{ ergebnis|raw }}
+    </div>
+    {% endif %}
+
+    <a href="{{ path('app_download') }}" class="btn btn-outline-primary mt-3">
+    ⬇️ CSV herunterladen
+    </a>
+
+
+
+</div>
+{% endblock %}
